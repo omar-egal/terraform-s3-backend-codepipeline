@@ -1,7 +1,7 @@
 #---compute/main.tf---
 
 # The Launch Template for the EC2 instances
-resource "aws_launch_template" "bastion_host_lt" {
+resource "aws_launch_template" "week24_lt" {
   name                   = "bastion_host_lt"
   image_id               = var.image_id
   instance_type          = var.instance_type
