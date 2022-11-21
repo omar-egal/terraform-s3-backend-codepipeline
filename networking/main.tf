@@ -1,16 +1,12 @@
 #---networking/main.tf---
 
-# Declare the data source
-data "aws_availability_zones" "available" {
-}
-
 resource "random_integer" "random" {
   min = 1
   max = 100
 }
 
 resource "random_shuffle" "az_list" {
-  input        = data.aws_availability_zones.available.names
+  input        = var.availability_zones
   result_count = var.max_subnets
 }
 

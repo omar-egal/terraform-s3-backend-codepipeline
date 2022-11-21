@@ -14,3 +14,8 @@ data "aws_ami" "amazon_linux_2" {
     values = ["amzn2-ami-hvm*"]
   }
 }
+
+# Declare the data source
+data "aws_availability_zones" "available" {
+  exclude_names = ["us-east-1e"]
+}

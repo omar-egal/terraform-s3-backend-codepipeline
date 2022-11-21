@@ -7,6 +7,7 @@ module "networking" {
   max_subnets             = 20
   public_cidrs            = [for i in range(1, 255, 1) : cidrsubnet(local.vpc_cidr, 8, i)]
   map_public_ip_on_launch = true
+  availability_zones      = local.availability_zones
 }
 
 module "security" {
@@ -21,4 +22,8 @@ module "compute" {
   instance_type          = "t3.micro"
   key_name               = "luit_key"
   vpc_security_group_ids = module.security.security_group_id[0]
+  desired_capacity       = 2
+  max_size               = 3
+  min_size               = 2
+  vpc_zone_identifier    = module.networking.public_subnets
 } 
