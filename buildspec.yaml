@@ -13,8 +13,6 @@ phases:
        - terraform --version
   build:
     commands:
-       - export AWS_ACCESS_KEY_ID=$ACCESS_KEY
-       - export AWS_ACCESS_SECRET_KEY=$SECRET_ACCESS_KEY
        - terraform init
        - terraform validate
        - terraform apply --auto-approve
