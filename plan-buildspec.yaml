@@ -8,7 +8,6 @@ phases:
        - yum -y install terraform
   pre_build:
     commands:
-       - mv terraform /usr/local/bin/
        - terraform --version
        - terraform init
        - terraform validate
