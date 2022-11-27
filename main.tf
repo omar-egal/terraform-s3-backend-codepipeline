@@ -34,6 +34,6 @@ module "pipeline" {
   compute_type                   = "BUILD_GENERAL1_SMALL"
   image                          = "aws/codebuild/amazonlinux2-x86_64-standard:4.0"
   type                           = "LINUX_CONTAINER"
-  dockerhub_credentials          = var.dockerhub_credentials
+  # dockerhub_credentials          = var.dockerhub_credentials
   codestar_connector_credentials = var.codestar_connector_credentials
 }
