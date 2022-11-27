@@ -1,4 +1,4 @@
-#---pipeline/main.tf----
+#---pipeline/s3.tf----
 
 # Create s3 bucket for pipeline artifacts
 resource "aws_s3_bucket" "codepipeline_artifacts" {

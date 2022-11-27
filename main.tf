@@ -31,4 +31,9 @@ module "compute" {
 module "pipeline" {
   source      = "./pipeline"
   bucket_name = "cicd-pipeline-artifacts-141511272022"
+  compute_type = "BUILD_GENERAL1_SMALL"
+  image = "hashicorp/terraform:1.3.5"
+  type = "LINUX_CONTAINER"
+  dockerhub_credentials = var.dockerhub_credentials
+  codestar_connector_credentials = var.codestar_connector_credentials
 }
