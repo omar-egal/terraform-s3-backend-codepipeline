@@ -26,4 +26,9 @@ module "compute" {
   max_size               = 3
   min_size               = 2
   vpc_zone_identifier    = module.networking.public_subnets
-} 
+}
+
+module "pipeline" {
+  source      = "./pipeline"
+  bucket_name = "cicd-pipeline-artifacts-141511272022"
+}
