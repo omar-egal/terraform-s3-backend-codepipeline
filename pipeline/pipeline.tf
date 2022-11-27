@@ -16,10 +16,6 @@ resource "aws_codebuild_project" "tf_plan" {
     type                        = var.type
     privileged_mode = true
     image_pull_credentials_type = "CODEBUILD"
-        # registry_credential{
-        #     credential = var.dockerhub_credentials
-        #     credential_provider = "SECRETS_MANAGER"
-        # }
      }
   source {
     type      = "CODEPIPELINE"
@@ -43,10 +39,6 @@ resource "aws_codebuild_project" "tf_apply" {
     type                        = var.type
     privileged_mode = true
     image_pull_credentials_type = "CODEBUILD"
-    # registry_credential {
-    #   credential          = var.dockerhub_credentials
-    #   credential_provider = "SECRETS_MANAGER"
-    # }
   }
   source {
     type      = "CODEPIPELINE"
